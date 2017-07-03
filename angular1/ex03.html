@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Ex03</title>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript">
+      var app = angular.module('myApp', [])
+      app.controller('myCtrl', [
+        '$scope',
+        function($scope){
+          $scope.value = 10
+          $scope.inc = function() {
+            $scope.value++
+          }
+        }
+      ])
+    </script>
+  </head>
+  <body ng-controller="myCtrl">
+    <h1> {{value}}</h1>
+    <input ng-model="value">
+    <button ng-click="inc()">incremento</button>
+  </body>
+</html>

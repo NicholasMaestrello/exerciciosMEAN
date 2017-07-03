@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Ex08</title>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript">
+      var app = angular.module('myApp', [])
+      app.directive('myClock', function(){
+        return {
+          restrict: 'AE',
+          template: `<h2>${new Date}</h2>`
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <h1>atributo</h1>
+    <div my-clock></div>
+    <h1>elemento</h1>
+    <my-clock></my-clock>
+  </body>
+</html>

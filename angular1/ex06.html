@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Ex06</title>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript">
+      var app = angular.module('myApp', [])
+      app.factory('utils', [
+        function() {
+          function upper(input) {
+            return input.toUpperCase()
+          }
+          return {upper}
+        }
+      ])
+      app.controller('myCtrl', [
+        'utils',
+        function(utils){
+          const self = this
+          self.value = utils.upper('texto')
+        }
+      ])
+    </script>
+  </head>
+  <body ng-controller="myCtrl as ctrl">
+    <span>{{ctrl.value}}</span>
+  </body>
+</html>
